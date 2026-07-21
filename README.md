@@ -1,6 +1,6 @@
 ## TechSolutions
 
-Proyecto en Laravel 12 para la gestión de proyectos. Incluye una API REST y una Aplicación Web con vistas.
+Proyecto en Laravel 12 para la gestión de proyectos.
 
 Desarrollado por Johhan Urrutia y Kevin Escobar.
 
