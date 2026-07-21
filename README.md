@@ -1,41 +1,35 @@
-# API de Proyectos - TechSolutions
+## TechSolutions
 
-API REST en Laravel 12 para la gestión de proyectos.
+Proyecto en Laravel 12 para la gestión de proyectos. Incluye una API REST y una Aplicación Web con vistas.
 
-## Configuración rápida
+Desarrollado por Johhan Urrutia y Kevin Escobar.
 
-1. Configurar y levantar el proyecto con Laragon (`http://techsolutions.test`) o con Artisan:
+## Instalación desde cero
+
+1. Instalar dependencias de PHP:
    ```bash
-   php artisan serve
+   composer install
    ```
-2. Ejecutar las migraciones de la base de datos:
+2. Crear el archivo de entorno y la clave de la aplicación:
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+3. Crear el archivo de base de datos SQLite:
+   ```bash
+   touch database/database.sqlite
+   ```
+4. Ejecutar las migraciones:
    ```bash
    php artisan migrate
    ```
-
-## Rutas y Endpoints (`/api/proyecto`)
-
-| Acción | Método | Endpoint | Estructura JSON (Body) |
-| :--- | :--- | :--- | :--- |
-| **Listar todos** | `GET` | `/api/proyecto` | (Vacío) |
-| **Obtener uno** | `GET` | `/api/proyecto/{id}` | (Vacío) |
-| **Agregar** | `POST` | `/api/proyecto` | Estructura JSON de ejemplo |
-| **Actualizar** | `PUT` | `/api/proyecto/{id}` | Estructura JSON de ejemplo (Parcial) |
-| **Eliminar** | `DELETE` | `/api/proyecto/{id}` | (Vacío) |
-
-### Estructura JSON de ejemplo (Proyecto)
-```json
-{
-  "nombre": "Desarrollo de Software",
-  "fecha_inicio": "2026-03-10",
-  "estado": "Activo",
-  "responsable": "Jaime Bodaleo",
-  "monto": 10000000.00
-}
-```
-*(Nota: `fecha_inicio` también soporta formatos como `DD-MM-YYYY` gracias a un parseo automático).*
+5. Levantar el proyecto con Laragon (`http://techsolutions.test`) o con Artisan:
+   ```bash
+   php artisan serve
+   ```
 
 ## Pruebas
+
 Ejecutar las pruebas automatizadas:
 ```bash
 php artisan test
